@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %} Papers List {% endblock %}
+{% block content %}
+<div class="container">
+<div class="col-md-10">
+    <div class="thumbnail">
+    <p align="center" style="font-size: xx-large">Papers List</p>
+        {% for paper in paper_list %}
+            <div class="list-group">
+                <a href="{% url 'index:paper_detail' paper.id %}" class="list-group-item active">
+                    <h7 class="list-group-item-heading">{{paper.title}}</h7>
+                </a>
+                <p class="list-group-item-text">概要：{{paper.body|slice:'70'| linebreaks}}</p>
+                <p class="list-group-item-text">发布时间：{{paper.publish|date:"Y M d,h:m:s"}}</p>
+            </div>
+            <hr>
+        {% endfor %}
+
+    </div>
+</div>
+</div>
+{% endblock %}
+

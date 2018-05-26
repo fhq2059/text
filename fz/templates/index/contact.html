@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}联系我们{% endblock %}
+{% block content %}
+
+<div class="container col-md-9">
+<div class="panel">
+    <div class="col-md-10">
+
+              <div class="row" style="margin-left: 10px">
+              <img src="{% static 'images/icon_accession.gif' %}" width="50"><span style="font-size: larger" >联系我们</span>
+              </div>
+
+              <p><span style="font-size: larger">通信地址：</span><span style="font-size: larger"> 西安工程大学177号信箱，邮编：710048</span></p>
+              <p><span style="font-size: larger">联系地址：</span><span style="font-size: larger"> 中国 陕西 西安 金花南路19号西安工程大学科二楼</span></p>
+              <p><span style="font-size: larger">中心网站：</span><span style="font-size: larger"> <a href=" http://127.0.0.1:8000/index/index/"> http://127.0.0.1:8000/index/index/</a></span></p>
+              <p><span style="font-size: larger">E-mail：</span><span style="font-size: larger"> imctex@163.com(信息咨询)、shaojingfeng1980@aliyun.com(科学研究)</span></p>
+              <p><span style="font-size: larger">办公电话：</span><span style="font-size: larger"> 029-83116118</span></p>
+         </div>
+
+    <div class="col-md-2">
+         <img src="{% static 'images/erweima.png' %}" width="200">
+    </div>
+    <div>
+    <iframe src="{% url 'index:map' %}" width="800" height="800" frameborder="0" scrolling="no"></iframe>
+    </div>
+</div>
+</div>
+{% endblock %}

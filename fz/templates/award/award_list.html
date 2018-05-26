@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %} 研究列表 {% endblock %}
+
+{% block content %}
+<div class="container">
+<div class="col-md-10">
+<p style="font-size: larger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;围绕“管理科学与工程”一级学科，科研成果获陕西省科学技术奖三等奖、中国纺织工业联合会科学技术奖三等奖等省部级奖励3项，西安市科学技术奖二等奖、陕西高校科学技术奖二等奖、三等奖等厅局级奖7项，以及中国纺织工业联合会经济研究成果奖一等奖、二等奖、三等奖等10项。</p>
+
+{#    <textarea rows="40" cols="140" id="chatText" readonly="readonly">#}
+    <div class="thumbnail">
+    <table width="910" border="1" BGCOLOR="#ccffcc">
+    <tr align="center"><td>获奖时间</td><td>奖励名称</td><td>获奖项目名称	</td><td>颁奖单位</td><td>角色</td></tr>
+        {% for award in awards %}
+            <tr align="center">
+                <td width="90">
+                {{ award.time }}
+                </td>
+
+                <td align="center" width="100">
+                {{ award.awardname }}
+                </td>
+
+                <td align="center" width="500">
+                {{ award.projectname }}
+                </td>
+
+                <td align="center" width="120">
+                {{ award.company }}
+                </td>
+
+                <td align="center">
+                {{ award.role }}
+                </td>
+            </tr>
+        {% endfor %}
+
+    </table>
+    </div>
+{#    </textarea>#}
+</div>
+</div>
+{% endblock %}
+

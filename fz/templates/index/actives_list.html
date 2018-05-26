@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %} Actives List {% endblock %}
+{% block content %}
+<div class="container">
+<div class="col-md-10">
+    <div class="thumbnail">
+    <p align="center" style="font-size: xx-large">Actives List</p>
+        {% for active in actives_list %}
+            <div class="list-group">
+                <a href="{% url 'index:actives_detail' active.id %}" class="list-group-item active">
+                    <h7 class="list-group-item-heading">{{active.title}}</h7>
+                </a>
+                <p class="list-group-item-text">概要：{{active.body|slice:'70'| linebreaks}}</p>
+            </div>
+            <hr>
+        {% endfor %}
+
+    </div>
+</div>
+</div>
+{% endblock %}
+

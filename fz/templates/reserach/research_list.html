@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %} 研究列表 {% endblock %}
+
+{% block content %}
+<div class="container">
+ <div class="col-md-10">
+    <p style="font-size: larger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;根据“管理科学与工程”一级学科建设要求，围绕该中心凝练的三个研究方向，团队成员已承担国家自然科学基金面上项目、国家科技支撑计划子项目及英国科学院自然科学研究项目等国家级项目6项，以及中国纺织工业联合会应用基础研究项目、陕西省科技攻关项目等省部级、厅局级项目20余项。</p>
+
+
+<div class="thumbnail">
+{#    <textarea rows="40" cols="140" id="chatText" readonly="readonly">#}
+    <table width="910" border="1" BGCOLOR="#ccffcc">
+    <tr align="center"><td>方向</td><td>起止时间</td><td>项目名称</td><td>项目来源</td><td>级别</td></tr>
+
+            <tr align="center">
+                <td width="90" rowspan="{{ r1 }}">
+                    互联网+智能制造方向
+                </td>
+                {% for research1 in research1 %}
+                <td align="center" width="100">
+                {{ research1.time }}
+                </td>
+                <td align="center" width="500">
+                {{ research1.name }}
+                </td>
+                <td align="center" width="120">
+                {{ research1.projectorigin }}
+                </td>
+                <td align="center">
+                {{ research1.rank }}
+                </td>
+            </tr>
+                {% endfor %}
+            <tr align="center">
+                <td width="100" rowspan="{{ r2 }}">
+                多源异构纺织数据融合方向
+                </td>
+                {% for research2 in research2 %}
+                <td align="center">
+                {{ research2.time }}
+                </td>
+                <td align="center">
+                {{ research2.name }}
+                </td>
+                <td align="center">
+                {{ research2.projectorigin }}
+                </td>
+                <td align="center">
+                {{ research2.rank }}
+                </td>
+            </tr>
+            {% endfor %}
+            <tr align="center">
+                <td  width="100" rowspan="{{ r3 }}">
+                多源异构纺织数据融合方向
+                </td>
+
+                {% for research3 in research3 %}
+                <td align="center">
+                {{ research3.time }}
+                </td>
+                <td align="center">
+                {{ research3.name }}
+                </td>
+                <td align="center">
+                {{ research3.projectorigin }}
+                </td>
+                <td align="center">
+                {{ research3.rank }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{#    </textarea>#}
+    </div>
+</div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,54 @@
+{% load staticfiles %}
+
+<div class="container">
+    <div class="row text-center vertical-middle-sm" >
+        <img src="{% static 'images/indexlogo.png'%}">
+    </div>
+    <nav class="navbar navbar-default" role="navigation" style="background: #ecffff">
+        <div>
+            <ul class="nav nav-pills" style="margin-left: 100px" >
+                <li><a href="{% url 'index:index' %}" >首页</a></li>
+                <li><a href="{% url 'index:centerintr' %}" >中心简介</a></li>
+                <li><a href="{% url 'research:researchs' %}">科研项目</a></li>
+                <li><a href="{% url 'monographs:monographs_list' %}">论文及专著</a></li>
+                <li><a href="{% url 'award:award_list' %}">成果获奖</a></li>
+                <li><a href="{% url 'people:people_list' %}">研究团队</a></li>
+                <li><a href="{% url 'adactivaty:adactivaty_list' %}">学术活动</a></li>
+                <li><a href="{% url 'index:dataset' %}" >数据集及软件</a></li>
+                <li><a href="{% url 'index:link' %}">相关链接</a></li>
+                <li><a href="{% url 'index:contact' %}">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+</div>
+
+    <div class="col-md-2" style="margin-left: 110px">
+        <div class="thumbnail">
+            <div>
+            <p class="glyphicon glyphicon-th-list" >Introduction</p>
+            <img src="{% static 'images/180.gif' %}">
+            </div>
+
+            <div class="row">
+                <div class="navbar-brand">中心负责人</div>
+                <div class="navbar-brand">邵景峰</div>
+            </div>
+            <div class="panel-heading">
+                <p>博士、副教授、硕导</p>
+                <li>西安工程大学首届青年学术骨干</li>
+                <li>桑麻奖教金获得者</li>
+                <li>纺织企业管理信息研究中心负责人</li>
+                <li>管理学院院长助理</li>
+                <li>E-mail:imctex@163.com</li>
+            </div>
+            <div class="row">
+                <div class="navbar-brand glyphicon glyphicon-th-large">中心目标</div>
+            </div>
+            <img src="{% static 'images/tone.png' %}">
+        </div>
+
+    </div>
+
+<script src="{% static 'js/jquery-3.3.1.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>

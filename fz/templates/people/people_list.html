@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %} 研究团队 {% endblock %}
+
+{% block content %}
+<div class="container">
+<div class="col-md-10">
+<p style="font-size: larger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;围绕“管理科学与工程”一级学科，该科技创新团队主要研究：(1)互联网+纺织智造，(2)纤维材料高通量计算，(3)多源异构纺织数据融合三个方向的基础理论与关键技术。</p>
+
+        <div class="thumbnail">
+            <p style="color: red">	互联网+纺织智造组(Group of Internet Plus Intelligent Manufacturing for Textile)</p>
+            <span>主要围绕整个纺织流程，研究纺织过程智能制造技术，生产过程质量控制理论，具有自我运算、判断能力的纺织智能制造技术、基于互联网技术的纺织设备状态参数估计和软件定义制造方法。</span>
+            {% for people in people_list1 %}
+                    {% cycle '<div class="row">' '' '' '' %}
+                    <div class="col-xs-3 col-sm-3 col-md-3">
+                        <div class="thumbnail" style="height: 300px">
+                            <img src="{{ people.image.url }}" width="120" height="200">
+                            <div class="caption">
+                                <h4>{{ people.name }}</h4>
+                                <p>{{ people.title }}</p>
+                                <p>研究兴趣{{ people.interest }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% cycle '' '' '' '</div>' %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="thumbnail">
+            <p style="color: red">	纤维材料高通量计算组(Group of High Throughput Calculation of Fiber Materials)</p>
+            <span>围绕我国纺织产业转型升级的核心问题，开展大数据不确定性与纤维材料计算研究，及e-Science 方法和技术在机电一体化，材料科学和纤维材料高通量计算理论方法的研究。</span>
+            {% for people in people_list2 %}
+                    {% cycle '<div class="row">' '' '' '' %}
+                    <div class="col-xs-3 col-sm-3 col-md-3">
+                        <div class="thumbnail" style="height: 300px">
+                            <img src="{{ people.image.url }}" width="120" height="200">
+                            <div class="caption">
+                                <h4>{{ people.name }}</h4>
+                                <p>{{ people.title }}</p>
+                                <p>研究兴趣{{ people.interest }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% cycle '' '' '' '</div>' %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="thumbnail">
+            <p style="color: red">多源异构纺织数据融合组(Group of Multi-source Heterogeneous Data Fusion for Textile)</p>
+            <span>	多源异构纺织数据融合组(Group of Multi-source Heterogeneous Data Fusion for Textile)
+围绕整个纺织产业供应链，主要研究纺织异构数据的集成与融合方法，以及信息的特征表示、提取与理解等的理论、方法与应用，研发基于知识推送的智能终端。</span>
+            {% for people in people_list3 %}
+                    {% cycle '<div class="row">' '' '' '' %}
+                    <div class="col-xs-3 col-sm-3 col-md-3">
+                        <div class="thumbnail" style="height: 300px">
+                            <img src="{{ people.image.url }}" width="120" height="200">
+                            <div class="caption">
+                                <h4>{{ people.name }}</h4>
+                                <p>{{ people.title }}</p>
+                                <p>研究兴趣{{ people.interest }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% cycle '' '' '' '</div>' %}
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+

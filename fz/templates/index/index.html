@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}首页{% endblock %}
+{% block content %}
+
+<div class="container">
+    <div class="col-md-5">
+        <div>
+            <div class="panel"  style="margin-left: 30px;background: #fffdf8">
+                <div style="font-size: x-large ;background: #ecffff " >
+                    <span style="margin-left: 40px">Latest Papers</span>
+                    <span class="glyphicon glyphicon-align-justify"  style="margin-left: 100px"><a href="{% url 'index:paper_list' %}" >More</a></span>
+                </div>
+                <ul>
+                    {% for paper in papers %}
+                    <li><a href=" {% url 'index:paper_detail' paper.id %}"> {{ paper.body }}</a></li>
+                        <hr>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="panel"  style="margin-left: 30px;background: #fffdf8">
+                <div style="font-size: x-large ;background: #ecffff " >
+                    <span style="margin-left: 40px">Actives</span>
+                    <span class="glyphicon glyphicon-align-justify"  style="margin-left: 160px"><a href="{% url 'index:actives_list' %}" >More</a></span>
+                </div>
+                <div style="font-size: large">
+                <ul>
+                {% for active in actives %}
+                <li>
+                    {% if active.image %}
+                            <div><img src="{{ active.image.url }}" style="float:left;"></div>
+                    {% endif %}
+                    <a href="{% url 'index:actives_detail' active.id %}"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ active.body }}</a>
+                </li>
+                <hr>
+                {% endfor %}
+                </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-5">
+        <div class="panel"  style="margin-left: 30px;background: #fffdf8">
+            <div style="font-size: x-large ;background: #ecffff " >
+                <span style="margin-left: 20px">Research Groups</span>
+                <span class="glyphicon glyphicon-align-justify" style="margin-left: 80px"><a href="{% url 'index:rsdirection_list' %}" >More</a></span>
+            </div>
+        <div>
+            <ol>
+                {% for rsdirection in rsdirections %}
+                    <li>
+                    <a href="{% url 'index:rsdirection_detail' rsdirection.id %}"> <p style="font-size: large">{{ rsdirection.title }}</p></a>{% if rsdirection.image %}
+                            <div><img src="{{ rsdirection.image.url }}" style="float:left;"></div>
+                    {% endif %}
+                    <p>{{ rsdirection.body |safe }}</p>
+                    <hr>
+                    </li>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+</div>
+{% endblock %}

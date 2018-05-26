@@ -1,0 +1,21 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    {% block javascript %}{% endblock %}
+
+</head>
+<body background="{% static 'images/body-bj2.jpg' %}" style="width:1440px;">
+    {% include "header.html" %}
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    {% include "footer.html" %}
+
+</body>
+</html>

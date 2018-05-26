@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %} Rsdirection Detail {% endblock %}
+
+{% block content %}
+<div class="container">
+<div class="col-md-10" >
+    <p align="center" style="font-size: larger">{{ rsdirection.title }}</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ rsdirection.body }}</p>
+    <p align="center"><img src="{{ rsdirection.image.url }}" ></p>
+
+<br>
+
+</div>
+</div>
+{% endblock %}

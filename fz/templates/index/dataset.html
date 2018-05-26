@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %} 数据集及软件 {% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="col-md-10">
+        <p style="font-size: larger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该团队成员已申请发明专利15项，其中授权7项，已获软件著作权7项。同时，该中心已与咸阳纺织集团、陕西五环集团、浙江洁丽雅集团有限公司等大中型纺织企业，以及陕西纺织科学研究所等纺织研究机构建立了良好的产学研合作关系，相关成果已在合作企业得到大量应用，并解决了生产中的实际问题。</p>
+        <div class="thumbnail">
+            <div >
+                <p style="font-size: x-large"><b>1、数据集及相关模型、算法 </b></p>
+                <p style="font-size: larger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;围绕整个纺织产业供应链，主要研究纺织异构数据的集成与融合方法，以及信息的特征表示、提取与理解等的理论；纺织数据融合方法、大数据挖掘算法、纺织数据聚类与分类算法、独立成分分析、非负矩阵分解等，以及具有自我运算、判断能力的纺织智能制造技术、基于互联网技术的纺织设备状态参数估计和软件定义制造方法。</p>
+                <img src="{% static 'images/dataset/suanfa.png' %}" >
+            </div>
+            <div >
+                <p style="font-size: x-large"><b>2、系统软件及硬件装置 </b></p>
+                <p style="font-size: larger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;研发面向纺织过程的生产监测系统、过程控制系统，研究纺织过程智能制造技术，生产过程质量控制理论，同时研发基于用户偏好的知识推送智能终端APP等。其中，<b>系统软件部分详见如下。</b></p>
+                <img src="{% static 'images/dataset/software.png' %}" >
+            </div>
+            <div >
+                <p style="font-size: large"><b>&nbsp;&nbsp;&nbsp;系统硬件部分详见如下。 </b></p>
+                <img src="{% static 'images/dataset/software1.png' %}" >
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %} Rsdirection List {% endblock %}
+{% block content %}
+<div class="container">
+<div class="col-md-10">
+    <div class="thumbnail">
+    <p align="center" style="font-size: xx-large">Rsdirection List</p>
+        {% for rsdirection in rsdirection_list %}
+            <div class="list-group">
+                <a href="{% url 'index:rsdirection_detail' rsdirection.id %}" class="list-group-item active">
+                    <h7 class="list-group-item-heading">{{rsdirection.title}}</h7>
+                </a>
+                <p class="list-group-item-text">概要：{{rsdirection.body|slice:'70'| linebreaks}}</p>
+            </div>
+            <hr>
+        {% endfor %}
+
+    </div>
+</div>
+</div>
+{% endblock %}
+
